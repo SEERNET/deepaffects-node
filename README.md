@@ -9,13 +9,13 @@ DeepAffects - JavaScript client for DeepAffects API
 #### npm
 
 ```shell
-npm install deep_affects --save
+npm install deep-affects --save
 ```
 
 #### git
 
 ```shell
-    npm install SEERNET/deepaffects-node --save
+npm install SEERNET/deepaffects-node --save
 ```
 
 ### For browser
@@ -30,12 +30,24 @@ browserify main.js > bundle.js
 
 Then include *bundle.js* in the HTML pages.
 
+## Documentation for Authorization
+
+DeepAffects API authenticates all the api requests via API Key.
+
+For API key registration and setup, checkout our [quickstart guide](https://developers.deepaffects.com/docs/#quickstart-guide)
+
+### UserSecurity
+
+- **Type**: API key
+- **API key parameter name**: apikey
+- **Location**: URL query string
+
 ## Getting Started
 
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var DeepAffects = require('deep_affects');
+var DeepAffects = require('deep-affects');
 
 var defaultClient = DeepAffects.ApiClient.instance;
 
@@ -61,7 +73,7 @@ api.asyncDenoiseAudio(body, callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *BaseURL*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -83,13 +95,3 @@ Class | Method | HTTP request | Description
  - [DeepAffects.Audio](docs/Audio.md)
  - [DeepAffects.DiarizeAudio](docs/DiarizeAudio.md)
  - [DeepAffects.EmotionScore](docs/EmotionScore.md)
-
-
-## Documentation for Authorization
-
-
-### UserSecurity
-
-- **Type**: API key
-- **API key parameter name**: apikey
-- **Location**: URL query string
