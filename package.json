@@ -1,7 +1,7 @@
 {
-  "name": "deepaffects",
-  "version": "v1",
-  "description": "Node wrapper for DeepAffects APIs",
+  "name": "deep_affects",
+  "version": "0.1.0",
+  "description": "Node wrapper client for DeepAffects API",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

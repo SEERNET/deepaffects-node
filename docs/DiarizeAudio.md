@@ -1,4 +1,4 @@
-# SeerNetAudioApIs.DiarizeAudio
+# DeepAffects.DiarizeAudio
 
 ## Properties
 Name | Type | Description | Notes

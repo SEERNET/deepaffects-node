@@ -1,4 +1,4 @@
-# SeerNetAudioApIs.EmotionScore
+# DeepAffects.EmotionScore
 
 ## Properties
 Name | Type | Description | Notes

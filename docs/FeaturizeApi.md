@@ -1,4 +1,4 @@
-# SeerNetAudioApIs.FeaturizeApi
+# DeepAffects.FeaturizeApi
 
 All URIs are relative to *https://localhost*
 
@@ -18,8 +18,8 @@ Extract paralinguistic feature from an audio file.
 
 ### Example
 ```javascript
-var SeerNetAudioApIs = require('seer_net_audio_ap_is');
-var defaultClient = SeerNetAudioApIs.ApiClient.default;
+var DeepAffects = require('deep_affects');
+var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
@@ -27,9 +27,9 @@ UserSecurity.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //UserSecurity.apiKeyPrefix = 'Token';
 
-var apiInstance = new SeerNetAudioApIs.FeaturizeApi();
+var apiInstance = new DeepAffects.FeaturizeApi();
 
-var body = new SeerNetAudioApIs.Audio(); // Audio | Audio object that needs to be featurized.
+var body = new DeepAffects.Audio(); // Audio | Audio object that needs to be featurized.
 
 
 var callback = function(error, data, response) {
@@ -71,8 +71,8 @@ Extract paralinguistic feature from an audio file.
 
 ### Example
 ```javascript
-var SeerNetAudioApIs = require('seer_net_audio_ap_is');
-var defaultClient = SeerNetAudioApIs.ApiClient.default;
+var DeepAffects = require('deep_affects');
+var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
@@ -80,9 +80,9 @@ UserSecurity.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //UserSecurity.apiKeyPrefix = 'Token';
 
-var apiInstance = new SeerNetAudioApIs.FeaturizeApi();
+var apiInstance = new DeepAffects.FeaturizeApi();
 
-var body = new SeerNetAudioApIs.Audio(); // Audio | Audio object that needs to be featurized.
+var body = new DeepAffects.Audio(); // Audio | Audio object that needs to be featurized.
 
 
 var callback = function(error, data, response) {

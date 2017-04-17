@@ -1,4 +1,4 @@
-# SeerNetAudioApIs.DiarizeApi
+# DeepAffects.DiarizeApi
 
 All URIs are relative to *https://localhost*
 
@@ -18,8 +18,8 @@ Diarize an audio file.
 
 ### Example
 ```javascript
-var SeerNetAudioApIs = require('seer_net_audio_ap_is');
-var defaultClient = SeerNetAudioApIs.ApiClient.default;
+var DeepAffects = require('deep_affects');
+var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
@@ -27,9 +27,9 @@ UserSecurity.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //UserSecurity.apiKeyPrefix = 'Token';
 
-var apiInstance = new SeerNetAudioApIs.DiarizeApi();
+var apiInstance = new DeepAffects.DiarizeApi();
 
-var body = new SeerNetAudioApIs.DiarizeAudio(); // DiarizeAudio | Audio object that needs to be diarized.
+var body = new DeepAffects.DiarizeAudio(); // DiarizeAudio | Audio object that needs to be diarized.
 
 
 var callback = function(error, data, response) {
@@ -71,8 +71,8 @@ Diarize an audio file.
 
 ### Example
 ```javascript
-var SeerNetAudioApIs = require('seer_net_audio_ap_is');
-var defaultClient = SeerNetAudioApIs.ApiClient.default;
+var DeepAffects = require('deep_affects');
+var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
@@ -80,9 +80,9 @@ UserSecurity.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //UserSecurity.apiKeyPrefix = 'Token';
 
-var apiInstance = new SeerNetAudioApIs.DiarizeApi();
+var apiInstance = new DeepAffects.DiarizeApi();
 
-var body = new SeerNetAudioApIs.DiarizeAudio(); // DiarizeAudio | Audio object that needs to be diarized.
+var body = new DeepAffects.DiarizeAudio(); // DiarizeAudio | Audio object that needs to be diarized.
 
 
 var callback = function(error, data, response) {

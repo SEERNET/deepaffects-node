@@ -1,4 +1,4 @@
-# SeerNetAudioApIs.Audio
+# DeepAffects.Audio
 
 ## Properties
 Name | Type | Description | Notes
