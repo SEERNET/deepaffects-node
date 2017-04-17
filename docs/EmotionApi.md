@@ -1,0 +1,116 @@
+# SeerNetAudioApIs.EmotionApi
+
+All URIs are relative to *https://localhost*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**asyncRecogniseEmotion**](EmotionApi.md#asyncRecogniseEmotion) | **POST** /api/v1/audio/async/recognise_emotion | Find emotion in an audio file
+[**syncRecogniseEmotion**](EmotionApi.md#syncRecogniseEmotion) | **POST** /api/v1/audio/sync/recognise_emotion | Find emotion in an audio file
+
+
+<a name="asyncRecogniseEmotion"></a>
+# **asyncRecogniseEmotion**
+> AsyncResponse asyncRecogniseEmotion(body)
+
+Find emotion in an audio file
+
+Extract emotion from an audio file.
+
+### Example
+```javascript
+var SeerNetAudioApIs = require('seer_net_audio_ap_is');
+var defaultClient = SeerNetAudioApIs.ApiClient.default;
+
+// Configure API key authorization: UserSecurity
+var UserSecurity = defaultClient.authentications['UserSecurity'];
+UserSecurity.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//UserSecurity.apiKeyPrefix = 'Token';
+
+var apiInstance = new SeerNetAudioApIs.EmotionApi();
+
+var body = new SeerNetAudioApIs.Audio(); // Audio | Audio object that needs to be featurized.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.asyncRecogniseEmotion(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. | 
+
+### Return type
+
+[**AsyncResponse**](AsyncResponse.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="syncRecogniseEmotion"></a>
+# **syncRecogniseEmotion**
+> [EmotionScore] syncRecogniseEmotion(body)
+
+Find emotion in an audio file
+
+Extract emotion from an audio file.
+
+### Example
+```javascript
+var SeerNetAudioApIs = require('seer_net_audio_ap_is');
+var defaultClient = SeerNetAudioApIs.ApiClient.default;
+
+// Configure API key authorization: UserSecurity
+var UserSecurity = defaultClient.authentications['UserSecurity'];
+UserSecurity.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//UserSecurity.apiKeyPrefix = 'Token';
+
+var apiInstance = new SeerNetAudioApIs.EmotionApi();
+
+var body = new SeerNetAudioApIs.Audio(); // Audio | Audio object that needs to be featurized.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.syncRecogniseEmotion(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. | 
+
+### Return type
+
+[**[EmotionScore]**](EmotionScore.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
