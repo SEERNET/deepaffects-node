@@ -57,8 +57,7 @@ UserSecurity.apiKey = "YOUR API KEY"
 
 var api = new DeepAffects.DenoiseApi()
 
-var body = new DeepAffects.Audio(); // {Audio} Audio object that needs to be denoised.
-
+var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object that needs to be denoised.
 
 var callback = function(error, data, response) {
   if (error) {
