@@ -53,9 +53,9 @@ var defaultClient = DeepAffects.ApiClient.instance;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
-UserSecurity.apiKey = "YOUR API KEY"
+UserSecurity.apiKey = "YOUR API KEY";
 
-var api = new DeepAffects.DenoiseApi()
+var api = new DeepAffects.DenoiseApi();
 
 var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object that needs to be denoised.
 
