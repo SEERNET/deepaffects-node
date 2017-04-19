@@ -4,8 +4,8 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**asyncDenoiseAudio**](DenoiseApi.md#asyncDenoiseAudio) | **POST** /api/v1/audio/async/denoise | Denoise an audio file
-[**syncDenoiseAudio**](DenoiseApi.md#syncDenoiseAudio) | **POST** /api/v1/audio/sync/denoise | Denoise an audio file
+[**asyncDenoiseAudio**](DenoiseApi.md#asyncDenoiseAudio) | **POST** /audio/generic/api/v1/async/denoise | Denoise an audio file
+[**syncDenoiseAudio**](DenoiseApi.md#syncDenoiseAudio) | **POST** /audio/generic/api/v1/sync/denoise | Denoise an audio file
 
 
 <a name="asyncDenoiseAudio"></a>

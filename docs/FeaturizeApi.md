@@ -4,8 +4,8 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**asyncFeaturizeAudio**](FeaturizeApi.md#asyncFeaturizeAudio) | **POST** /api/v1/audio/async/featurize | featurize an audio file
-[**syncFeaturizeAudio**](FeaturizeApi.md#syncFeaturizeAudio) | **POST** /api/v1/audio/sync/featurize | featurize an audio file
+[**asyncFeaturizeAudio**](FeaturizeApi.md#asyncFeaturizeAudio) | **POST** /audio/generic/api/v1/async/featurize | featurize an audio file
+[**syncFeaturizeAudio**](FeaturizeApi.md#syncFeaturizeAudio) | **POST** /audio/generic/api/v1/sync/featurize | featurize an audio file
 
 
 <a name="asyncFeaturizeAudio"></a>

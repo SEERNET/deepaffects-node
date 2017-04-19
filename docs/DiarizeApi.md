@@ -4,8 +4,8 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**asyncDiarizeAudio**](DiarizeApi.md#asyncDiarizeAudio) | **POST** /api/v1/audio/async/diarize | Diarize an audio file
-[**syncDiarizeAudio**](DiarizeApi.md#syncDiarizeAudio) | **POST** /api/v1/audio/sync/diarize | Diarize an audio file
+[**asyncDiarizeAudio**](DiarizeApi.md#asyncDiarizeAudio) | **POST** /audio/generic/api/v1/async/diarize | Diarize an audio file
+[**syncDiarizeAudio**](DiarizeApi.md#syncDiarizeAudio) | **POST** /audio/generic/api/v1/sync/diarize | Diarize an audio file
 
 
 <a name="asyncDiarizeAudio"></a>

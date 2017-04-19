@@ -4,8 +4,8 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**asyncIsDepressed**](EllipsisApi.md#asyncIsDepressed) | **POST** /api/v1/audio/async/ellipsis/is_depressed | Find if a person is depressed from audio.
-[**syncIsDepressed**](EllipsisApi.md#syncIsDepressed) | **POST** /api/v1/audio/sync/ellipsis/is_depressed | Find if a person is depressed from audio.
+[**asyncIsDepressed**](EllipsisApi.md#asyncIsDepressed) | **POST** /audio/custom/ellipsis/api/v1/async/is_depressed | Find if a person is depressed from audio.
+[**syncIsDepressed**](EllipsisApi.md#syncIsDepressed) | **POST** /audio/custom/ellipsis/api/v1/sync/is_depressed | Find if a person is depressed from audio.
 
 
 <a name="asyncIsDepressed"></a>

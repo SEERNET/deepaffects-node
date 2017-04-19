@@ -4,8 +4,8 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**asyncRecogniseEmotion**](EmotionApi.md#asyncRecogniseEmotion) | **POST** /api/v1/audio/async/recognise_emotion | Find emotion in an audio file
-[**syncRecogniseEmotion**](EmotionApi.md#syncRecogniseEmotion) | **POST** /api/v1/audio/sync/recognise_emotion | Find emotion in an audio file
+[**asyncRecogniseEmotion**](EmotionApi.md#asyncRecogniseEmotion) | **POST** /audio/generic/api/v1/async/recognise_emotion | Find emotion in an audio file
+[**syncRecogniseEmotion**](EmotionApi.md#syncRecogniseEmotion) | **POST** /audio/generic/api/v1/sync/recognise_emotion | Find emotion in an audio file
 
 
 <a name="asyncRecogniseEmotion"></a>
