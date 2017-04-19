@@ -51,34 +51,36 @@ var path = require('path');
 
   describe('Audio', function() {
     it('should create an instance of Audio', function() {
-      // uncomment below and update the code to test Audio
       var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');
       var instance = DeepAffects.Audio.fromFile(audioFile);
       expect(instance).to.be.a(DeepAffects.Audio);
     });
 
     it('should have the property encoding (base name: "encoding")', function() {
-      // uncomment below and update the code to test the property encoding
-      //var instane = new DeepAffects.Audio();
-      //expect(instance).to.be();
+      var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');
+      var instance = DeepAffects.Audio.fromFile(audioFile);
+      expect(instance['encoding']).to.be.a("string");
+      expect(instance['encoding']).to.be("MULAW");
     });
 
     it('should have the property sampleRate (base name: "sampleRate")', function() {
-      // uncomment below and update the code to test the property sampleRate
-      //var instane = new DeepAffects.Audio();
-      //expect(instance).to.be();
+      var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');
+      var instance = DeepAffects.Audio.fromFile(audioFile, null, 16000);
+      expect(instance['sampleRate']).to.be.a("number");
+      expect(instance['sampleRate']).to.be(16000);
     });
 
     it('should have the property languageCode (base name: "languageCode")', function() {
-      // uncomment below and update the code to test the property languageCode
-      //var instane = new DeepAffects.Audio();
-      //expect(instance).to.be();
+      var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');
+      var instance = DeepAffects.Audio.fromFile(audioFile);
+      expect(instance['languageCode']).to.be.a("string");
+      expect(instance['languageCode']).to.be('en-US');
     });
 
     it('should have the property content (base name: "content")', function() {
-      // uncomment below and update the code to test the property content
-      //var instane = new DeepAffects.Audio();
-      //expect(instance).to.be();
+      var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');
+      var instance = DeepAffects.Audio.fromFile(audioFile);
+      expect(instance['content']).to.be.a("string");
     });
 
   });
