@@ -13,8 +13,7 @@
 var fs = require('fs');
 var is = require('is');
 var path = require('path');
-
-function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
+var utils = require('./utils');
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -60,38 +59,6 @@ function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
     _this['content'] = content;
   };
 
-  var findFile_ = function(file) {
-    // File exists on disk.
-    return fs.readFileSync(file);
-  };
-
-  var detectEncoding_ = function(filename) {
-    if (!is.string(filename)) {
-      return;
-    }
-
-    switch (path.extname(filename).toLowerCase()) {
-      case '.raw': {
-        return 'LINEAR16';
-      }
-      case '.amr': {
-        return 'AMR';
-      }
-      case '.awb': {
-        return 'AMR_WB';
-      }
-      case '.flac': {
-        return 'FLAC';
-      }
-      case '.au':
-      case '.wav': {
-        return 'MULAW';
-      }
-      default: {
-        throw new Error('Encoding could not be determined for file: ' + filename);
-      }
-    }
-  };
   /**
    * Constructs a <code>Audio</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -121,10 +88,10 @@ function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
 
   exports.fromFile = function(file, encoding, sampleRate, languageCode) {
     var exp = new exports();
-    exp['encoding'] = detectEncoding_(file);
-    exp['sampleRate'] = defaultFor(sampleRate, 8000);
-    exp['languageCode'] = defaultFor(languageCode, 'en-US');
-    exp['content'] = findFile_(file).toString('base64');
+    exp['encoding'] = utils.detectEncoding(file);
+    exp['sampleRate'] = utils.defaultFor(sampleRate, 8000);
+    exp['languageCode'] = utils.defaultFor(languageCode, 'en-US');
+    exp['content'] = utils.findFile(file).toString('base64');
     return exp;
   }
 

@@ -24,13 +24,10 @@ var defaultClient = DeepAffects.ApiClient.default;
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
 UserSecurity.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//UserSecurity.apiKeyPrefix = 'Token';
 
 var apiInstance = new DeepAffects.DiarizeApi();
 
-var body = new DeepAffects.DiarizeAudio(); // DiarizeAudio | Audio object that needs to be diarized.
-
+var body = DeepAffects.DiarizeAudio.fromFile("/path/to/file"); // DiarizeAudio | Audio object that needs to be diarized.
 
 var callback = function(error, data, response) {
   if (error) {
@@ -46,7 +43,7 @@ apiInstance.asyncDiarizeAudio(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DiarizeAudio**](DiarizeAudio.md)| Audio object that needs to be diarized. | 
+ **body** | [**DiarizeAudio**](DiarizeAudio.md)| Audio object that needs to be diarized. |
 
 ### Return type
 
@@ -77,12 +74,10 @@ var defaultClient = DeepAffects.ApiClient.default;
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
 UserSecurity.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//UserSecurity.apiKeyPrefix = 'Token';
 
 var apiInstance = new DeepAffects.DiarizeApi();
 
-var body = new DeepAffects.DiarizeAudio(); // DiarizeAudio | Audio object that needs to be diarized.
+var body = DeepAffects.DiarizeAudio.fromFile("/path/to/file"); // DiarizeAudio | Audio object that needs to be diarized.
 
 
 var callback = function(error, data, response) {
@@ -99,7 +94,7 @@ apiInstance.syncDiarizeAudio(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DiarizeAudio**](DiarizeAudio.md)| Audio object that needs to be diarized. | 
+ **body** | [**DiarizeAudio**](DiarizeAudio.md)| Audio object that needs to be diarized. |
 
 ### Return type
 
@@ -113,4 +108,3 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-

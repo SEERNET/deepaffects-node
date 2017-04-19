@@ -24,13 +24,10 @@ var defaultClient = DeepAffects.ApiClient.default;
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
 UserSecurity.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//UserSecurity.apiKeyPrefix = 'Token';
 
 var apiInstance = new DeepAffects.EmotionApi();
 
-var body = new DeepAffects.Audio(); // Audio | Audio object that needs to be featurized.
-
+var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
 
 var callback = function(error, data, response) {
   if (error) {
@@ -46,7 +43,7 @@ apiInstance.asyncRecogniseEmotion(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. | 
+ **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. |
 
 ### Return type
 
@@ -82,8 +79,7 @@ UserSecurity.apiKey = 'YOUR API KEY';
 
 var apiInstance = new DeepAffects.EmotionApi();
 
-var body = new DeepAffects.Audio(); // Audio | Audio object that needs to be featurized.
-
+var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
 
 var callback = function(error, data, response) {
   if (error) {
@@ -99,7 +95,7 @@ apiInstance.syncRecogniseEmotion(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. | 
+ **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. |
 
 ### Return type
 
@@ -113,4 +109,3 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
