@@ -95,3 +95,9 @@ Class | Method | HTTP request | Description
  - [DeepAffects.Audio](docs/Audio.md)
  - [DeepAffects.DiarizeAudio](docs/DiarizeAudio.md)
  - [DeepAffects.EmotionScore](docs/EmotionScore.md)
+
+
+## About
+[DeepAffects](https://www.deepaffects.com/dashboard) is an emotional intelligence analysis engine that measures the effect emotional intelligence
+has on team dynamics, and provides emotional analytics that serve as the basis of insights to improve
+project management, performance and satisfaction across organizations, projects, and teams. To watch DeepAffects in action: check out DeepAffects [Atlassian JIRA addon](https://marketplace.atlassian.com/plugins/com.deepaffects.teams.jira/cloud/overview) and our [Github addon](https://teams.deepaffects.com/).
