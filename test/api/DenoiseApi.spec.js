@@ -73,7 +73,8 @@
 
         // Configure API key authorization: UserSecurity
         var UserSecurity = defaultClient.authentications['UserSecurity'];
-        UserSecurity.apiKey = "pawPprdiOCO63Rfprdgj9M40S846PHgJ";
+        UserSecurity.apiKey = process.env.API_KEY;
+
 
         var api = new DeepAffects.DenoiseApi();
         var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');

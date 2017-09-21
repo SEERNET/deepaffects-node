@@ -46,7 +46,7 @@
      * @type {String}
      * @default https://localhost
      */
-    this.basePath = 'https://deepaffects-prod.apigee.net/'.replace(/\/+$/, '');
+    this.basePath = 'https://proxy.api.deepaffects.com/'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
