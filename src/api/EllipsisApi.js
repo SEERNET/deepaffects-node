@@ -60,7 +60,7 @@
      * @param {module:api/EllipsisApi~asyncIsDepressedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AsyncResponse}
      */
-    this.asyncIsDepressed = function(body, callback) {
+    this.asyncIsDepressed = function(body, webhook, callback) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
@@ -72,6 +72,7 @@
       var pathParams = {
       };
       var queryParams = {
+          "webhook": webhook
       };
       var headerParams = {
       };

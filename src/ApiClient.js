@@ -455,6 +455,9 @@
       case 'Date':
         return this.parseDate(String(data));
       default:
+        if (typeof data === 'string') {
+          data = JSON.parse(data)
+        }
         if (type === Object) {
           // generic object, return directly
           return data;

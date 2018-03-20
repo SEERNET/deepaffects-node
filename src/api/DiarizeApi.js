@@ -60,7 +60,7 @@
      * @param {module:api/DiarizeApi~asyncDiarizeAudioCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AsyncResponse}
      */
-    this.asyncDiarizeAudio = function(body, callback) {
+    this.asyncDiarizeAudio = function(body, webhook, callback) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
@@ -72,6 +72,7 @@
       var pathParams = {
       };
       var queryParams = {
+          "webhook": webhook
       };
       var headerParams = {
       };
