@@ -60,6 +60,7 @@ var api = new DeepAffects.DenoiseApi();
 
 var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object that needs to be denoised.
 
+webhook = "http://your/webhook/"
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -67,7 +68,8 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.asyncDenoiseAudio(body, callback);
+api.syncDenoiseAudio(body, callback);
+api.asyncDenoiseAudio(body, webhook, callback);
 
 ```
 
