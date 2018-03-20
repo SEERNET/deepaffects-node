@@ -18,7 +18,7 @@ Diarize an audio file.
 
 ### Example
 ```javascript
-var DeepAffects = require('deep_affects');
+var DeepAffects = require('deep-affects');
 var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
@@ -36,7 +36,8 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.asyncDiarizeAudio(body, callback);
+webhook = "http://your/webhook/"
+apiInstance.asyncDiarizeAudio(body, webhook, callback);
 ```
 
 ### Parameters
@@ -68,7 +69,7 @@ Diarize an audio file.
 
 ### Example
 ```javascript
-var DeepAffects = require('deep_affects');
+var DeepAffects = require('deep-affects');
 var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity

@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 Denoise an audio file
 
-Denoise an audio file.
+Denoise an audio fgsile.
 
 ### Example
 ```javascript
-var DeepAffects = require('deep_affects');
+var DeepAffects = require('deep-affects');
 var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
@@ -39,7 +39,8 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.asyncDenoiseAudio(body, callback);
+webhook = "http://your/webhook/"
+apiInstance.asyncDenoiseAudio(body, webhook, callback);
 ```
 
 ### Parameters
@@ -71,7 +72,7 @@ Denoise an audio file.
 
 ### Example
 ```javascript
-var DeepAffects = require('deep_affects');
+var DeepAffects = require('deep-affects');
 var defaultClient = DeepAffects.ApiClient.default;
 
 // Configure API key authorization: UserSecurity
