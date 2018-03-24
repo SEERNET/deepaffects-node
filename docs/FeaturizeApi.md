@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**asyncFeaturizeAudio**](FeaturizeApi.md#asyncFeaturizeAudio) | **POST** /audio/generic/api/v1/async/featurize | featurize an audio file
-[**syncFeaturizeAudio**](FeaturizeApi.md#syncFeaturizeAudio) | **POST** /audio/generic/api/v1/sync/featurize | featurize an audio file
+[**asyncFeaturizeAudio**](FeaturizeApi.md#asyncFeaturizeAudio) | **POST** /api/v1/async/featurize | featurize an audio file
+[**syncFeaturizeAudio**](FeaturizeApi.md#syncFeaturizeAudio) | **POST** /api/v1/sync/featurize | featurize an audio file
 
 
 <a name="asyncFeaturizeAudio"></a>
 # **asyncFeaturizeAudio**
-> AsyncResponse asyncFeaturizeAudio(body)
+> AsyncResponse asyncFeaturizeAudio(body, webhook, opts)
 
 featurize an audio file
 
@@ -18,16 +18,24 @@ Extract paralinguistic feature from an audio file.
 
 ### Example
 ```javascript
-var DeepAffects = require('deep-affects');
-var defaultClient = DeepAffects.ApiClient.default;
+var DeepAffects = require('deep_affects');
+var defaultClient = DeepAffects.ApiClient.instance;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
 UserSecurity.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//UserSecurity.apiKeyPrefix = 'Token';
 
 var apiInstance = new DeepAffects.FeaturizeApi();
 
-var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
+var body = new DeepAffects.Audio(); // Audio | Audio object that needs to be featurized.
+
+var webhook = "webhook_example"; // String | The webhook url where result from async resource is posted
+
+var opts = {
+  'requestId': "requestId_example" // String | Unique identifier for the request
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -36,8 +44,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-webhook = "http://your/webhook/"
-apiInstance.asyncFeaturizeAudio(body, webhook, callback);
+apiInstance.asyncFeaturizeAudio(body, webhook, opts, callback);
 ```
 
 ### Parameters
@@ -45,6 +52,8 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Audio**](Audio.md)| Audio object that needs to be featurized. |
+ **webhook** | **String**| The webhook url where result from async resource is posted |
+ **requestId** | **String**| Unique identifier for the request | [optional]
 
 ### Return type
 
@@ -61,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="syncFeaturizeAudio"></a>
 # **syncFeaturizeAudio**
-> [[&#39;Number&#39;]] syncFeaturizeAudio(body)
+> AudioFeatures syncFeaturizeAudio(body)
 
 featurize an audio file
 
@@ -69,16 +78,19 @@ Extract paralinguistic feature from an audio file.
 
 ### Example
 ```javascript
-var DeepAffects = require('deep-affects');
-var defaultClient = DeepAffects.ApiClient.default;
+var DeepAffects = require('deep_affects');
+var defaultClient = DeepAffects.ApiClient.instance;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications['UserSecurity'];
 UserSecurity.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//UserSecurity.apiKeyPrefix = 'Token';
 
 var apiInstance = new DeepAffects.FeaturizeApi();
 
-var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
+var body = new DeepAffects.Audio(); // Audio | Audio object that needs to be featurized.
+
 
 var callback = function(error, data, response) {
   if (error) {
@@ -98,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[[&#39;Number&#39;]]**
+[**AudioFeatures**](AudioFeatures.md)
 
 ### Authorization
 
@@ -108,3 +120,4 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+

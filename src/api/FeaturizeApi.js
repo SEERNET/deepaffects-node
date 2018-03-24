@@ -14,18 +14,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AsyncResponse', 'model/Audio'], factory);
+    define(['ApiClient', 'model/AsyncResponse', 'model/Audio', 'model/AudioFeatures'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AsyncResponse'), require('../model/Audio'));
+    module.exports = factory(require('../ApiClient'), require('../model/AsyncResponse'), require('../model/Audio'), require('../model/AudioFeatures'));
   } else {
     // Browser globals (root is window)
     if (!root.DeepAffects) {
       root.DeepAffects = {};
     }
-    root.DeepAffects.FeaturizeApi = factory(root.DeepAffects.ApiClient, root.DeepAffects.AsyncResponse, root.DeepAffects.Audio);
+    root.DeepAffects.FeaturizeApi = factory(root.DeepAffects.ApiClient, root.DeepAffects.AsyncResponse, root.DeepAffects.Audio, root.DeepAffects.AudioFeatures);
   }
-}(this, function(ApiClient, AsyncResponse, Audio) {
+}(this, function(ApiClient, AsyncResponse, Audio, AudioFeatures) {
   'use strict';
 
   /**
@@ -57,6 +57,7 @@
      * featurize an audio file
      * Extract paralinguistic feature from an audio file.
      * @param {module:model/Audio} body Audio object that needs to be featurized.
+     * @param {String} webhook The webhook url where result from async resource is posted
      * @param {module:api/FeaturizeApi~asyncFeaturizeAudioCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AsyncResponse}
      */
@@ -64,7 +65,7 @@
       var postBody = body;
 
       // verify the required parameter 'body' is set
-      if (body == undefined || body == null) {
+      if (body === undefined || body == null) {
         throw new Error("Missing the required parameter 'body' when calling asyncFeaturizeAudio");
       }
 
@@ -95,7 +96,7 @@
      * Callback function to receive the result of the syncFeaturizeAudio operation.
      * @callback module:api/FeaturizeApi~syncFeaturizeAudioCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<['Number']>} data The data returned by the service call.
+     * @param {module:model/AudioFeatures} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -104,13 +105,13 @@
      * Extract paralinguistic feature from an audio file.
      * @param {module:model/Audio} body Audio object that needs to be featurized.
      * @param {module:api/FeaturizeApi~syncFeaturizeAudioCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<['Number']>}
+     * data is of type: {@link module:model/AudioFeatures}
      */
     this.syncFeaturizeAudio = function(body, callback) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
-      if (body == undefined || body == null) {
+      if (body === undefined || body == null) {
         throw new Error("Missing the required parameter 'body' when calling syncFeaturizeAudio");
       }
 
@@ -127,7 +128,7 @@
       var authNames = ['UserSecurity'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [['Number']];
+      var returnType = AudioFeatures;
 
       return this.apiClient.callApi(
         '/audio/generic/api/v1/sync/featurize', 'POST',
