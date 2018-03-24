@@ -60,7 +60,7 @@
      * @param {module:api/EmotionApi~asyncRecogniseEmotionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AsyncResponse}
      */
-    this.asyncRecogniseEmotion = function(body, webhook, callback) {
+    this.asyncRecogniseEmotion = function(body, webhook, callback, request_id) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
@@ -71,9 +71,18 @@
 
       var pathParams = {
       };
-      var queryParams = {
-          "webhook": webhook
-      };
+      var queryParams;
+      if(request_id === undefined){
+            queryParams = {
+                "webhook": webhook
+            };
+      }
+      else{
+            queryParams = {
+                "webhook": webhook,
+                "request_id": request_id
+            };
+      }
       var headerParams = {
       };
       var formParams = {
