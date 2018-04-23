@@ -1,5 +1,6 @@
 # deepaffects-node
 [![Build Status](https://travis-ci.org/SEERNET/deepaffects-node.svg?branch=master)](https://travis-ci.org/SEERNET/deepaffects-node)
+[![npm version](https://badge.fury.io/js/deep-affects.svg)](https://badge.fury.io/js/deep-affects)
 
 DeepAffects - JavaScript client for DeepAffects API
 
