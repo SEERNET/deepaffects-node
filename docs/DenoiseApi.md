@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Denoise an audio file
 
-Denoise an audio fgsile.
+Denoise an audio file.
 
 ### Example
 ```javascript

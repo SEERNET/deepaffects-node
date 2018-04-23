@@ -1,5 +1,6 @@
 # deepaffects-node
 [![Build Status](https://travis-ci.org/SEERNET/deepaffects-node.svg?branch=master)](https://travis-ci.org/SEERNET/deepaffects-node)
+[![npm version](https://badge.fury.io/js/deep-affects.svg)](https://badge.fury.io/js/deep-affects)
 
 DeepAffects - JavaScript client for DeepAffects API
 
@@ -81,8 +82,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DeepAffects.DenoiseApi* | [**asyncDenoiseAudio**](docs/DenoiseApi.md#asyncDenoiseAudio) | **POST** /audio/generic/api/v1/async/denoise | Denoise an audio file
 *DeepAffects.DenoiseApi* | [**syncDenoiseAudio**](docs/DenoiseApi.md#syncDenoiseAudio) | **POST** /audio/generic/api/v1/sync/denoise | Denoise an audio file
-*DeepAffects.DiarizeApi* | [**asyncDiarizeAudio**](docs/DiarizeApi.md#asyncDiarizeAudio) | **POST** /audio/generic/api/v1/async/diarize | Diarize an audio file
-*DeepAffects.DiarizeApi* | [**syncDiarizeAudio**](docs/DiarizeApi.md#syncDiarizeAudio) | **POST** /audio/generic/api/v1/sync/diarize | Diarize an audio file
+*DeepAffects.DiarizeApiV2* | [**asyncDiarizeAudio**](docs/DiarizeApiV2.md#asyncDiarizeAudio) | **POST** /audio/generic/api/v2/async/diarize | Diarize an audio file
+*DeepAffects.DiarizeApi* | [**asyncDiarizeAudio**](docs/DiarizeApi.md#asyncDiarizeAudio) | **POST** /audio/generic/api/v1/async/diarize | Diarize an audio file (Legacy)
+*DeepAffects.DiarizeApi* | [**syncDiarizeAudio**](docs/DiarizeApi.md#syncDiarizeAudio) | **POST** /audio/generic/api/v1/sync/diarize | Diarize an audio file (Legacy)
 *DeepAffects.EllipsisApi* | [**asyncIsDepressed**](docs/EllipsisApi.md#asyncIsDepressed) | **POST** /audio/custom/ellipsis/api/v1/async/is_depressed | Find if a person is depressed from audio.
 *DeepAffects.EllipsisApi* | [**syncIsDepressed**](docs/EllipsisApi.md#syncIsDepressed) | **POST** /audio/custom/ellipsis/api/v1/sync/is_depressed | Find if a person is depressed from audio.
 *DeepAffects.EmotionApi* | [**asyncRecogniseEmotion**](docs/EmotionApi.md#asyncRecogniseEmotion) | **POST** /audio/generic/api/v1/async/recognise_emotion | Find emotion in an audio file
