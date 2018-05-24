@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new DeepAffects.DiarizeApi();
+    instance = new DeepAffects.DiarizeApiV2();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,25 +47,31 @@
       object[property] = value;
   }
 
-  describe('DiarizeApi', function() {
+  describe('DiarizeApiV2', function() {
     describe('asyncDiarizeAudio', function() {
       it('should call asyncDiarizeAudio successfully', function(done) {
-        //uncomment below and update the code to test asyncDiarizeAudio
-        //instance.asyncDiarizeAudio(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('syncDiarizeAudio', function() {
-      it('should call syncDiarizeAudio successfully', function(done) {
-        //uncomment below and update the code to test syncDiarizeAudio
-        //instance.syncDiarizeAudio(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
+        this.timeout(0);
+        var defaultClient = DeepAffects.ApiClient.instance;
+
+        // Configure API key authorization: UserSecurity
+        var UserSecurity = defaultClient.authentications['UserSecurity'];
+        UserSecurity.apiKey = process.env.API_KEY;
+
+
+        var api = new DeepAffects.DiarizeApiV2();
+        var audioFile = path.join(__dirname, '..', 'data', 'cnndebate.wav');
+        var instance = DeepAffects.DiarizeAudio.fromFile(audioFile);
+        var webhook = "http://your/webhook/"
+        var callback = function(error, data, response) {
+          if (error) {
+            console.error(error);
+          } else {
+            console.log('API called successfully. Returned data: ' + data);
+          }
+          expect(data).to.be.a(DeepAffects.AsyncResponse);
+        };
+        
+        api.asyncDiarizeAudio(instance, webhook, callback);
       });
     });
   });
