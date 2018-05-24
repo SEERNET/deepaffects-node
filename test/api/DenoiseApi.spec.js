@@ -64,22 +64,14 @@
     describe('syncDenoiseAudio', function() {
       it('should call syncDenoiseAudio successfully', function(done) {
         this.timeout(0);
-        //uncomment below and update the code to test syncDenoiseAudio
-        //instance.syncDenoiseAudio(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
         var defaultClient = DeepAffects.ApiClient.instance;
 
         // Configure API key authorization: UserSecurity
         var UserSecurity = defaultClient.authentications['UserSecurity'];
         UserSecurity.apiKey = process.env.API_KEY;
-
-
         var api = new DeepAffects.DenoiseApi();
         var audioFile = path.join(__dirname, '..', 'data', 'clean.wav');
         var instance = DeepAffects.Audio.fromFile(audioFile);
-        console.log(instance);
         var callback = function(error, data, response) {
           if (error) {
             console.error(error);
