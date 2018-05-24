@@ -51,8 +51,10 @@
    * @param languageCode {String} Language spoken in the audio file.
    * @param content {String} base64 encoding of the audio file.
    * @param speakers {Number} Number of speakers in the file (-1 for unknown speakers)
+   * @param audioType {String} One of the following values: meeting, callcentre, podcast, healthcare
+   * @param mergeSegments {Boolean} Whether to merge consecutive segments of the same speaker together
    */
-  var exports = function(encoding, sampleRate, languageCode, content, speakers) {
+  var exports = function(encoding, sampleRate, languageCode, content, speakers, audioType, mergeSegments) {
     var _this = this;
 
     _this['encoding'] = encoding;
@@ -60,6 +62,8 @@
     _this['languageCode'] = languageCode;
     _this['content'] = content;
     _this['speakers'] = speakers;
+    _this['audioType'] = audioType;
+    _this['vad'] = mergeSegments;
   };
 
   /**
@@ -88,17 +92,25 @@
       if (data.hasOwnProperty('speakers')) {
         obj['speakers'] = ApiClient.convertToType(data['speakers'], 'Number');
       }
+      if (data.hasOwnProperty('audioType')) {
+        obj['audioType'] = ApiClient.convertToType(data['audioType'], 'String');
+      }
+      if (data.hasOwnProperty('vad')) {
+        obj['vad'] = ApiClient.convertToType(data['vad'], 'Boolean');
+      }
     }
     return obj;
   }
 
-  exports.fromFile = function(file, encoding, sampleRate, languageCode, speakers) {
+  exports.fromFile = function(file, encoding, sampleRate, languageCode, speakers, audioType, mergeSegments) {
     var exp = new exports();
     exp['encoding'] = utils.detectEncoding(file);
     exp['sampleRate'] = utils.defaultFor(sampleRate, 8000);
     exp['languageCode'] = utils.defaultFor(languageCode, 'en-US');
     exp['content'] = utils.findFile(file).toString('base64');
     exp['speakers'] = utils.defaultFor(speakers, -1);
+    exp['audioType'] = utils.defaultFor(audioType, 'meeting');
+    exp['vad'] = utils.defaultFor(mergeSegments, true);
     return exp;
   }
 
@@ -130,6 +142,20 @@
    * @default -1
    */
   exports.prototype['speakers'] = -1;
+
+  /**
+   * Type of the audio file: one of the following: meeting, podcast, healthcare, callcentre
+   * @member {String} speakers
+   * @default 'meeting'
+   */
+  exports.prototype['audioType'] = 'meeting';
+
+  /**
+   * Whether to merge the consecutive segments of the same speaker together
+   * @member {Boolean} vad
+   * @default true
+   */
+  exports.prototype['vad'] = true;
 
 
 
