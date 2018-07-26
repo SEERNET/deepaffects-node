@@ -19,7 +19,7 @@
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('./ApiClient'), require('./model/AsyncResponse'), require('./model/Audio'), require('./model/utils'), require('./model/DiarizeAudio'), require('./model/EmotionScore'), require('./api/DenoiseApi'), require('./api/DiarizeApi'), require('./api/DiarizeApiV2'), require('./api/EllipsisApi'), require('./api/EmotionApi'), require('./api/FeaturizeApi'));
   }
-}(function(ApiClient, AsyncResponse, Audio, DiarizeAudio, EmotionScore, DenoiseApi, DiarizeApi, DiarizeApiV2, EllipsisApi, EmotionApi, FeaturizeApi) {
+}(function(ApiClient, AsyncResponse, Audio, utils , DiarizeAudio, EmotionScore, DenoiseApi, DiarizeApi, DiarizeApiV2, EllipsisApi, EmotionApi, FeaturizeApi) {
   'use strict';
 
   /**
