@@ -10,18 +10,18 @@
  * Do not edit the class manually.
  *
  */
-var fs = require('fs');
-var is = require('is');
-var path = require('path');
-var utils = require('./utils');
+var fs = require("fs");
+var is = require("is");
+var path = require("path");
+var utils = require("./utils");
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+  if (typeof define === "function" && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+    define(["ApiClient"], factory);
+  } else if (typeof module === "object" && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require("../ApiClient"));
   } else {
     // Browser globals (root is window)
     if (!root.DeepAffects) {
@@ -29,11 +29,8 @@ var utils = require('./utils');
     }
     root.DeepAffects.Audio = factory(root.DeepAffects.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
-
+})(this, function(ApiClient) {
+  "use strict";
 
   /**
    * The Audio model module.
@@ -53,10 +50,10 @@ var utils = require('./utils');
   var exports = function(encoding, sampleRate, languageCode, content) {
     var _this = this;
 
-    _this['encoding'] = encoding;
-    _this['sampleRate'] = sampleRate;
-    _this['languageCode'] = languageCode;
-    _this['content'] = content;
+    _this["encoding"] = encoding;
+    _this["sampleRate"] = sampleRate;
+    _this["languageCode"] = languageCode;
+    _this["content"] = content;
   };
 
   /**
@@ -70,54 +67,58 @@ var utils = require('./utils');
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('encoding')) {
-        obj['encoding'] = ApiClient.convertToType(data['encoding'], 'String');
+      if (data.hasOwnProperty("encoding")) {
+        obj["encoding"] = ApiClient.convertToType(data["encoding"], "String");
       }
-      if (data.hasOwnProperty('sampleRate')) {
-        obj['sampleRate'] = ApiClient.convertToType(data['sampleRate'], 'Number');
+      if (data.hasOwnProperty("sampleRate")) {
+        obj["sampleRate"] = ApiClient.convertToType(
+          data["sampleRate"],
+          "Number"
+        );
       }
-      if (data.hasOwnProperty('languageCode')) {
-        obj['languageCode'] = ApiClient.convertToType(data['languageCode'], 'String');
+      if (data.hasOwnProperty("languageCode")) {
+        obj["languageCode"] = ApiClient.convertToType(
+          data["languageCode"],
+          "String"
+        );
       }
-      if (data.hasOwnProperty('content')) {
-        obj['content'] = ApiClient.convertToType(data['content'], 'String');
+      if (data.hasOwnProperty("content")) {
+        obj["content"] = ApiClient.convertToType(data["content"], "String");
       }
     }
     return obj;
-  }
+  };
 
   exports.fromFile = function(file, encoding, sampleRate, languageCode) {
     var exp = new exports();
-    exp['encoding'] = utils.detectEncoding(file);
-    exp['sampleRate'] = utils.defaultFor(sampleRate, 8000);
-    exp['languageCode'] = utils.defaultFor(languageCode, 'en-US');
-    exp['content'] = utils.findFile(file).toString('base64');
+    exp["encoding"] = encoding || utils.detectEncoding(file);
+    exp["sampleRate"] = utils.defaultFor(sampleRate, 8000);
+    exp["languageCode"] = utils.defaultFor(languageCode, "en-US");
+    exp["content"] = utils.findFile(file).toString("base64");
     return exp;
-  }
+  };
 
   /**
    * Encoding of audio file like MP3, WAV etc.
    * @member {String} encoding
    */
-  exports.prototype['encoding'] = undefined;
+  exports.prototype["encoding"] = undefined;
   /**
    * Sample rate of the audio file.
    * @member {Number} sampleRate
    */
-  exports.prototype['sampleRate'] = undefined;
+  exports.prototype["sampleRate"] = undefined;
   /**
    * Language spoken in the audio file.
    * @member {String} languageCode
    * @default 'en-US'
    */
-  exports.prototype['languageCode'] = 'en-US';
+  exports.prototype["languageCode"] = "en-US";
   /**
    * base64 encoding of the audio file.
    * @member {String} content
    */
-  exports.prototype['content'] = undefined;
-
-
+  exports.prototype["content"] = undefined;
 
   return exports;
-}));
+});
