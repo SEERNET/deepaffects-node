@@ -88,7 +88,7 @@ var utils = require('./utils');
 
   exports.fromFile = function(file, encoding, sampleRate, languageCode) {
     var exp = new exports();
-    exp['encoding'] = utils.detectEncoding(file);
+    exp['encoding'] = encoding || utils.detectEncoding(file);
     exp['sampleRate'] = utils.defaultFor(sampleRate, 8000);
     exp['languageCode'] = utils.defaultFor(languageCode, 'en-US');
     exp['content'] = utils.findFile(file).toString('base64');
