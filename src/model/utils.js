@@ -27,6 +27,12 @@ module.exports = {
         case '.flac': {
           return 'FLAC';
         }
+        case ".mp3": {
+          return "MP3";
+        }
+        case ".aac": {
+          return "AAC";
+        }
         case '.au':
         case '.wav': {
           return 'MULAW';
