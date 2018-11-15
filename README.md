@@ -87,8 +87,8 @@ Class | Method | HTTP request | Description
 *DeepAffects.DiarizeApi* | [**syncDiarizeAudio**](docs/DiarizeApi.md#syncDiarizeAudio) | **POST** /audio/generic/api/v1/sync/diarize | Diarize an audio file (Legacy)
 *DeepAffects.EllipsisApi* | [**asyncIsDepressed**](docs/EllipsisApi.md#asyncIsDepressed) | **POST** /audio/custom/ellipsis/api/v1/async/is_depressed | Find if a person is depressed from audio.
 *DeepAffects.EllipsisApi* | [**syncIsDepressed**](docs/EllipsisApi.md#syncIsDepressed) | **POST** /audio/custom/ellipsis/api/v1/sync/is_depressed | Find if a person is depressed from audio.
-*DeepAffects.EmotionApi* | [**asyncRecogniseEmotion**](docs/EmotionApi.md#asyncRecogniseEmotion) | **POST** /audio/generic/api/v1/async/recognise_emotion | Find emotion in an audio file
-*DeepAffects.EmotionApi* | [**syncRecogniseEmotion**](docs/EmotionApi.md#syncRecogniseEmotion) | **POST** /audio/generic/api/v1/sync/recognise_emotion | Find emotion in an audio file
+*DeepAffects.EmotionApi* | [**asyncRecogniseEmotion**](docs/EmotionApi.md#asyncRecogniseEmotion) | **POST** /audio/generic/api/v2/async/recognise_emotion | Find emotion in an audio file
+*DeepAffects.EmotionApi* | [**syncRecogniseEmotion**](docs/EmotionApi.md#syncRecogniseEmotion) | **POST** /audio/generic/api/v2/sync/recognise_emotion | Find emotion in an audio file
 *DeepAffects.FeaturizeApi* | [**asyncFeaturizeAudio**](docs/FeaturizeApi.md#asyncFeaturizeAudio) | **POST** /audio/generic/api/v1/async/featurize | featurize an audio file
 *DeepAffects.FeaturizeApi* | [**syncFeaturizeAudio**](docs/FeaturizeApi.md#syncFeaturizeAudio) | **POST** /audio/generic/api/v1/sync/featurize | featurize an audio file
 

@@ -94,7 +94,7 @@
       var returnType = AsyncResponse;
 
       return this.apiClient.callApi(
-        '/audio/generic/api/v1/async/recognise_emotion', 'POST',
+        '/audio/generic/api/v2/async/recognise_emotion', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -139,7 +139,7 @@
       var returnType = [EmotionScore];
 
       return this.apiClient.callApi(
-        '/audio/generic/api/v1/sync/recognise_emotion', 'POST',
+        '/audio/generic/api/v2/sync/recognise_emotion', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
