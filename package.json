@@ -8,7 +8,7 @@
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },
   "dependencies": {
-    "superagent": "1.7.1",
+    "superagent": "5.1.0",
     "is": "1.0.0",
     "path": "0.12.7"
   },
