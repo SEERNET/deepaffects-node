@@ -322,6 +322,9 @@
       // SuperAgent does not always produce a body; use the unparsed response as a fallback
       data = response.text;
     }
+    if (returnType == 'json') {
+      JSON.parse(dta)
+    }
     return exports.convertToType(data, returnType);
   };
 

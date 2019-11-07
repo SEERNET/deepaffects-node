@@ -144,6 +144,50 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
+    /**
+     * Callback function to receive the result of the syncRecogniseEmotion operation.
+     * @callback module:api/EmotionApi~syncRecogniseEmotionCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/EmotionScore>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Find emotion in an audio file
+     * Extract emotion from an audio file.
+     * @param {module:model/Audio} body Audio object that needs to be featurized.
+     * @param {module:api/EmotionApi~syncRecogniseEmotionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/EmotionScore>}
+     */
+    this.syncRecogniseTextEmotion = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw new Error("Missing the required parameter 'body' when calling syncRecogniseEmotion");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['UserSecurity'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'json';
+
+      return this.apiClient.callApi(
+        '/text/generic/api/latest/sync/text_recognise_emotion', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
   };
 
   return exports;
