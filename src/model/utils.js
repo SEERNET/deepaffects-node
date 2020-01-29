@@ -37,6 +37,9 @@ module.exports = {
         case '.wav': {
           return 'MULAW';
         }
+        case '.m4a': {
+          return 'M4A';
+        }
         default: {
           throw new Error('Encoding could not be determined for file: ' + filename);
         }
